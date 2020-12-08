@@ -45,5 +45,17 @@ if ($action == null){
     $result = array("result"=>$d->getAll($sql));
 
     print json_encode($result);
+}elseif($action == "5"){
+    $sql = "select distinct( tahun ) from vrekapeventtahunan";
+    
+    $result = array("result"=>$d->getAll($sql));
+
+    print json_encode($result);
+}elseif($action == "6"){
+    $sql = "select * from vrekapeventtahunan where tahun = ". $_REQUEST['thn'];
+    
+    $result = array("result"=>$d->getAll($sql));
+
+    print json_encode($result);
 }
 ?>

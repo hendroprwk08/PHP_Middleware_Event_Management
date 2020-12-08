@@ -5,9 +5,9 @@ header("Content-Type: application/json; charset=UTF-8");
 class Database{
     var $conn;
     var $host = "localhost";
-    var $db = "id9259556_event_lcc";
-    var $user = "id9259556_hendro";
-    var $pass = "0218454745";
+    var $db = "db_event";
+    var $user = "root";
+    var $pass = "";
     
     public function open(){
         $this->conn = mysqli_connect ($this->host,
@@ -38,7 +38,7 @@ class Database{
         return null;
     }
 	
-	public function getLastID(){
+    public function getLastID(){
         return mysqli_insert_id($this->conn);
     } 
 }
