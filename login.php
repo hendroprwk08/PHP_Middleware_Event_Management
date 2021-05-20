@@ -52,7 +52,7 @@ if (empty($_REQUEST['action'])){
         $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
       
         // More headers
-        $headers .= 'From: Auto Response LCC EM<no-reply@lcc.com>' . "\r\n";
+        $headers .= 'From: Auto Response Community Managment<no-reply@lcc.com>' . "\r\n";
         //$headers .= 'Cc: myboss@example.com' . "\r\n";
         
         mail($_REQUEST['em'], "Your Verification Code", $message, $headers);

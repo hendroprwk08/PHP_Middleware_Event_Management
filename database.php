@@ -5,9 +5,9 @@ header("Content-Type: application/json; charset=UTF-8");
 class Database{
     var $conn;
     var $host = "localhost";
-    var $db = "db_event";
-    var $user = "root";
-    var $pass = "";
+    var $db = "id15623844_event";
+    var $user = "id15623844_hendro";
+    var $pass = "kik#W!n%]yRci=)4";
     
     public function open(){
         $this->conn = mysqli_connect ($this->host,

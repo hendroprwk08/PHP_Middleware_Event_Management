@@ -39,6 +39,12 @@ if ($action == null){
     $result = array("result"=>$d->getAll($sql));
 
     print json_encode($result);
+}elseif($action == "31"){
+    $sql = "select event, date, time, count(id) as jumlah from veventpeserta group by event, date, time  order by date desc limit 5";
+    
+    $result = array("result"=>$d->getAll($sql));
+
+    print json_encode($result);
 }elseif($action == "4"){
     $sql = "select name, institution, jumlah from vjumlaheventpeserta order by jumlah desc limit 5";
     
@@ -46,7 +52,7 @@ if ($action == null){
 
     print json_encode($result);
 }elseif($action == "5"){
-    $sql = "select distinct( tahun ) from vrekapeventtahunan";
+    $sql = "select distinct( tahun ) from vrekapeventtahunan order by tahun desc";
     
     $result = array("result"=>$d->getAll($sql));
 

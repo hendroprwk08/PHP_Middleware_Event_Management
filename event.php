@@ -19,7 +19,7 @@ if ($action == null){
     print json_encode($result);
 }elseif($action == "1"){
     $sql = "insert into event (event, description, date, time, visible) "
-            . "values ('". $_REQUEST['event']."', '". $_REQUEST['deskripsi']."', '". $_REQUEST['tgl']."', '". $_REQUEST['jam']."', ". $_REQUEST['visible'].")";
+            . "values ('". $_REQUEST['event']."', '". $_REQUEST['deskripsi']."', '". $_REQUEST['tgl']."', '". $_REQUEST['jam']."', ". $_REQUEST['active'].")";
     $d->execute($sql);
          
     $myarray[] = array(
@@ -33,8 +33,11 @@ if ($action == null){
             . "description = '". $_REQUEST['deskripsi']."', "
             . "date = '". $_REQUEST['tgl']."', "
             . "time = '". $_REQUEST['jam']."', "
-            . "visible = ". $_REQUEST['visible']." "
+            . "visible = ". $_REQUEST['active']." "
             . "where id = ". $_REQUEST['id'];
+            
+    //print_r( $sql );
+    
     $d->execute($sql);
 
     $myarray[] = array(
